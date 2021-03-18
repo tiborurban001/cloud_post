@@ -108,6 +108,16 @@ nem tudjuk mert még nem adtuk meg a **routeokat**
            `  email: req.body.email, `
             ` password: req.body.password `
       `   }); `
+- beletöltjük az adatbázisba `newUser.save()`
+       ` .then(result => {`
+            `console.log(result);`
+           ` res.status(200).send({msg: 'Register Successful', user_id: "id"});`
+       ` })`
+        `.catch(error => {`
+           ` console.error(error);`
+           ` res.status(500).send({msg: 'Register Failed'});`
+        `})`
+        - különbséget teszünk hogyha van megadva adat akkor Successful ha nincs akkor Failed
 
 
 

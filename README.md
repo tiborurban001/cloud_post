@@ -100,6 +100,14 @@ nem tudjuk mert még nem adtuk meg a **routeokat**
 - **Postmant megnyissuk hogy küldjünk Post requistet**
 - Post: http://localhost:3000/user/login
 -  eredmény: **"msg": "Login Succeded"}**
+# User hozzáadása Regisztrációval
+- új felhasználó létrehozása object feltöltéssel
+`let newUser = new model({  `
+            ` firstname: req.body.firstname, `
+            ` lastname: req.body.lastname, `
+           `  email: req.body.email, `
+            ` password: req.body.password `
+      `   }); `
 
 
 

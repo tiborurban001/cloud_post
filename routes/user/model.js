@@ -24,4 +24,9 @@ const userSchema = mongoose.Schema({
         type: String,
         default: Date.now()
     }
-})
+});
+
+//maga a user sablon modell létrehozása
+const userModel = mongoose.model('user', userSchema);
+//importálásra alakítás
+module.exports = userModel;

@@ -2,7 +2,7 @@
 
 const model = require('./model');
 
-modules.export = {
+module.exports = {
     login: (req, res) => {
         res.status(200).send({msg: 'Login Succeded'});
     },

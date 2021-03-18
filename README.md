@@ -4,6 +4,7 @@
 1. `npm init`
 2. `npm i express jsonwebtoken mongoose dotenv bcrypt`
 - jsonwebtoken (Authentikációra)
+- express(router) kényelmesebb használni mivel single page alapú app lesz és külön usereket tudunk kezelni
 - mongoose (A MongoDB adatbázis kapcsolatra)
 - dotenv (hozzáférés)
 - bcrypt (jelszó hashaléshez(sózás))
@@ -95,6 +96,8 @@ nem tudjuk mert még nem adtuk meg a **routeokat**
       `  res.status(200).send({msg: 'Register Successful'});` 
   `  }` 
 `}`
+- majd hozzáadjuk a register routot a user index.js-be
+- **Postmant megnyissuk hogy küldjünk Post requistet**
 
 
 

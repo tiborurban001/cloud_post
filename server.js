@@ -17,11 +17,11 @@ const userRouter = require('./routes/user');
 
 //require, result, next
 const cors = (req, res, next) => {
-        res.headers('Acces-Control-Allow-Origin', '*');
-        res.headers('Acces-Control-Allow-Methods', '*');
-        res.headers('Acces-Control-Allow-Headers', '*');
+        res.header('Acces-Control-Allow-Origin', '*');
+        res.header('Acces-Control-Allow-Methods', '*');
+        res.header('Acces-Control-Allow-Headers', '*');
         next();
-}
+};
 
 
 app.use(express.urlencoded({extended: true}));

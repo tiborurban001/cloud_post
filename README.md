@@ -60,6 +60,12 @@ nem tudjuk mert még nem adtuk meg a **routeokat**
  ## Hiba: a MongoDB-t nem tudta elérni
  - MongoDB -ről Mongo Atlasban hoztam létre egy adatbázis ami a MongoDB felhő alapű adatbázisa így megjavult a probléma
  ` mongo_uri:'mongodb+srv://Tibor:PostCloudPassword@postcloud.pcmad.mongodb.net/postcloud', `
+ ## Hiba: fixed
+ - json, form, cors Application handlerek hozzáadása
+ `app.use(express.urlencoded({extended: true}));` \
+ `app.use(express.json());` \ 
+ `app.use(cors);`
+
 
 
 

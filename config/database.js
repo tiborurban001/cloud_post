@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const config = require('./index.js');
 
 //hozzá csatlakoztassuk a mongoDBhez 
-const db = mongoose.connect(config.mongo_uri, { useNewUrlParser: true})
+const db = mongoose.connect(config.mongo_uri, { useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => console.log('Adatbázishoz csatlakozva'))
     //hiba üzenet
     .catch((error) => console.log('Hiba lépett fel',error));

@@ -55,6 +55,12 @@ nem tudjuk mert még nem adtuk meg a **routeokat**
 `const db = mongoose.connect(config.mongo_uri, { useNewUrlParser: true}).then(() => console.log('Adatbázishoz csatlakozva'));`
 - exportáljuk az adatbázist: \
 ` module.exports = db; `
+- adatbázis behívása a surferbe **server.json** \
+` const db = require('./config/database'); `
+ ## Hiba: a MongoDB-t nem tudta elérni
+ - MongoDB -ről Mongo Atlasban hoztam létre egy adatbázis ami a MongoDB felhő alapű adatbázisa így megjavult a probléma
+ ` mongo_uri:'mongodb+srv://Tibor:PostCloudPassword@postcloud.pcmad.mongodb.net/postcloud', `
+
 
 
 

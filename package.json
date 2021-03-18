@@ -4,7 +4,7 @@
   "description": "Egy Instagram szeru alkalmazas",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server.js"
   },
   "author": "Urbán Tibor <tibor.urban001@gmail.com>",
   "license": "ISC",

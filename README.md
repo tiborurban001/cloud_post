@@ -34,5 +34,9 @@ valamint jelszót adtunk meg neki
       `  config.port, ` \
       `  console.log('A Szerver elindult a Port: %s',config.port) ` \
       `  ); `
+- ahhoz hogy beindítsuk ki kell törölnünk a **package.json**-ból a script tartalmát
+- beleílleszük a ` "dev": "nodemon server.js"` -t
+- ezzel azt érjük el hogy a node surfer-t a nodemon mindig újra indítja változtatásoknál így élőben tudjuk tesztelni.
+
 
 

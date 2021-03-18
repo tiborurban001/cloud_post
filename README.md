@@ -111,13 +111,32 @@ nem tudjuk mert még nem adtuk meg a **routeokat**
 - beletöltjük az adatbázisba `newUser.save()`
        ` .then(result => {`
             `console.log(result);`
-           ` res.status(200).send({msg: 'Register Successful', user_id: "id"});`
+           ` res.status(200).send({msg: 'Register Successful', user_id: result._id});`
        ` })`
         `.catch(error => {`
            ` console.error(error);`
            ` res.status(500).send({msg: 'Register Failed'});`
         `})`
         - különbséget teszünk hogyha van megadva adat akkor Successful ha nincs akkor Failed
+## User Password Hash,Sózás
+`userSchema.pre('save', function(next){`
+  `  let user = this;`
+`
+  `  //ha új user jön létre vagy új jelszó a BYCRPT be Hashali`
+    `if(!user.isModified('password'))`
+  `  return next();`
+    `bycrpt.getSalt(10, function(error, salt){`
+  `      if(error) return next(error);`
+`
+        `bycrpt.hash(user.password, salt, function(error,hash){`
+  `          if(error) return next(error);`
+`
+  `          user.password = hash;`
+  `          next();`
+ `       });`
+`    });`
+`});`
+
 
 
 

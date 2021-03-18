@@ -1,5 +1,6 @@
 //MongoDB model létrehozása Usernek
 const mongoose = require('mongoose');
+const bycrpt = require('bcrypt');
 
 
 //User Séma object létrehozása
@@ -28,5 +29,27 @@ const userSchema = mongoose.Schema({
 
 //maga a user sablon modell létrehozása
 const userModel = mongoose.model('user', userSchema);
+
+
+//User Password Hash,Sózás
+userSchema.pre('save', function(next){
+    let user = this;
+
+    //ha új user jön létre vagy új jelszó a BYCRPT be Hashali
+    if(!user.isModified('password'))
+    return next();
+    bycrpt.getSalt(10, function(error, salt){
+        if(error) return next(error);
+
+        bycrpt.hash(user.password, salt, function(error,hash){
+            if(error) return next(error);
+
+            user.password = hash;
+            next();
+        });
+    });
+});
+
+
 //importálásra alakítás
 module.exports = userModel;

@@ -73,9 +73,17 @@ nem tudjuk mert még nem adtuk meg a **routeokat**
  routes/user/index.js-ben
 
  `const router = require('express').Router(); ` \
-- Login route, kezelő létrehozása: \
+- Login route, kezelő létrehozása: 
  ` router.post('/login', controller.login);` \
  ` const controller = require('./controller');` \
+ **MongoDB(Atlas) model létrehozása Usernek**
+ ## User adatai
+ - **firstname**
+ - **lastname**
+ - **email**
+ - **password**
+ - **account_created**
+
 
 
 

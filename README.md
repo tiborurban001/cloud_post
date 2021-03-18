@@ -87,13 +87,13 @@ nem tudjuk mert még nem adtuk meg a **routeokat**
  - behívjuk a model/user sémát hogy használhassuk
  ` const model = require('./model'); `
  - ### Routok megfogalmazása kontrollerben ###
- - `modules.export = { ` /
-    ` login: (req, res) => { `/
-      `  res.status(200).send({msg: 'Login Succeded'});` /
-  `  },` /
- `   register: (req,res) => {` /
-      `  res.status(200).send({msg: 'Register Successful'});` /
-  `  }` /
+ - `modules.export = { ` 
+    ` login: (req, res) => { `
+      `  res.status(200).send({msg: 'Login Succeded'});` 
+  `  },` 
+ `   register: (req,res) => {` 
+      `  res.status(200).send({msg: 'Register Successful'});` 
+  `  }` 
 `}`
 
 

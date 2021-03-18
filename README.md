@@ -25,5 +25,7 @@
 } `
 - Így a helyi portunkra, a Mongo adatbázishoz is tud csatlakozni \
 valamint jelszót adtunk meg neki
+- majd a **server.js**-ben meghívjuk a configot
+` const config = require('./config'); ` 
 
 

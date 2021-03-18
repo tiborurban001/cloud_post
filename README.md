@@ -18,14 +18,21 @@
 ## config létrehozása
 - config/index.js portolás,stb..
 - létrehozunk egy objectet amit tele töltünk a konfiguráció elemeivel.
-- ` module.exports = {
-    port: process.env.PORT || 3000,
-    mongo_uri: process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/cloudpost',
-    secret: process.env.SECRET || 'SzakmaiVizsga'
-} `
+- ` module.exports = { ` \
+   ` port: process.env.PORT || 3000, ` \
+   ` mongo_uri: process.env.MONGO_URI || 'mongodb://  127.0.0.1:27017/cloudpost', ` \
+    `secret: process.env.SECRET || 'SzakmaiVizsga' 
+} ` 
 - Így a helyi portunkra, a Mongo adatbázishoz is tud csatlakozni \
 valamint jelszót adtunk meg neki
 - majd a **server.js**-ben meghívjuk a configot
 ` const config = require('./config'); ` 
+
+## elindítjuk az appot a megadott porton
+### server.js       
+- `app.listen( ` \
+      `  config.port, ` \
+      `  console.log('A Szerver elindult a Port: %s',config.port) ` \
+      `  ); `
 
 

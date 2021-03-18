@@ -65,6 +65,11 @@ nem tudjuk mert még nem adtuk meg a **routeokat**
  `app.use(express.urlencoded({extended: true}));` \
  `app.use(express.json());` \ 
  `app.use(cors);`
+ ## Routeok létrehozása
+ - **User**
+ ` const userRouter = require('./routes/user');` \
+ ` app.use('/user', userRouter); `
+
 
 
 

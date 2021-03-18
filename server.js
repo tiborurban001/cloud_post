@@ -10,6 +10,11 @@ const config = require('./config');
 //adatbázis meghívása
 const db = require('./config/database');
 
+//user route
+const userRouter = require('./routes/user');
+
+
+
 //require, result, next
 const cors = (req, res, next) => {
         res.headers('Acces-Control-Allow-Origin', '*');
@@ -18,9 +23,16 @@ const cors = (req, res, next) => {
         next();
 }
 
+
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cors);
+
+
+//---ROUTES
+//User
+app.use('/user', userRouter);
+
 
 //app beindítása
 app.listen(

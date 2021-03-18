@@ -98,6 +98,8 @@ nem tudjuk mert még nem adtuk meg a **routeokat**
 `}`
 - majd hozzáadjuk a register routot a user index.js-be
 - **Postmant megnyissuk hogy küldjünk Post requistet**
+- Post: http://localhost:3000/user/login
+-  eredmény: **"msg": "Login Succeded"}**
 
 
 

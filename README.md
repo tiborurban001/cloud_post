@@ -83,6 +83,19 @@ nem tudjuk mert még nem adtuk meg a **routeokat**
  - **email**
  - **password**
  - **account_created**
+ ### Controller.js
+ - behívjuk a model/user sémát hogy használhassuk
+ ` const model = require('./model'); `
+ - ### Routok megfogalmazása kontrollerben ###
+ - `modules.export = { ` /
+    ` login: (req, res) => { `/
+      `  res.status(200).send({msg: 'Login Succeded'});` /
+  `  },` /
+ `   register: (req,res) => {` /
+      `  res.status(200).send({msg: 'Register Successful'});` /
+  `  }` /
+`}`
+
 
 
 

@@ -67,8 +67,16 @@ nem tudjuk mert még nem adtuk meg a **routeokat**
  `app.use(cors);`
  ## Routeok létrehozása
  - **User**
+ server.js-ben
  ` const userRouter = require('./routes/user');` \
  ` app.use('/user', userRouter); `
+ routes/user/index.js-ben
+
+ `const router = require('express').Router(); ` \
+- Login route, kezelő létrehozása: \
+ ` router.post('/login', controller.login);` \
+ ` const controller = require('./controller');` \
+
 
 
 

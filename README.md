@@ -145,8 +145,21 @@ nem tudjuk mert még nem adtuk meg a **routeokat**
        ` callback(null, isMatch);`
    ` });`
 `}` 
-
-
+### Belépés, tokennel ellát 12 óráig
+`model.findOne({ email: req.body.email}, (error, user) =>{`
+ `           if(error) throw error;`
+  `          user.comparePassword(req.body.password,(error,isMatch) =>{`
+   `             if(error) throw error;`
+   `             if(isMatch) {`
+    `                let token = jwt.sign({id: user._id}, config.secret, {expiresIn: 43200});`
+    `                res.status(200).send({msg: 'Login Succeded', token: token});`
+   `             }else{`
+    `                res.status(401).send({msg: 'Passwords did not match'});`
+  `              }`
+  `          });`
+  `      })      `
+ `   },`
+#Kész User Authentikáció
 
 
 

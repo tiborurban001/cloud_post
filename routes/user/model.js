@@ -15,7 +15,9 @@ const userSchema = mongoose.Schema({
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        //csakis egy egyedi ilyen elem lehet az adatbázisban
+        unique: true
     },
     password: {
         type: String,

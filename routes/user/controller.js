@@ -1,10 +1,27 @@
 //User séma, model behívása
 
 const model = require('./model');
+const jwt = require('jsonwebtoken');
+const config = require('../../config')
 
 module.exports = {
     login: (req, res) => {
-        res.status(200).send({msg: 'Login Succeded'});
+        //keresse meg azt a User-t aminekmegfelelnek a beviteli adatok
+        model.findOne({ email: req.body.email}, (error, user) =>{
+            if(error) throw error;
+
+            //egyezik e a jelszó egy meglévő felhasználóval?
+            user.comparePassword(req.body.password,(error,isMatch) =>{
+                if(error) throw error;
+                if(isMatch) {
+                    //Belépési tokent ad a Usernek ami 12 órán túl lejár
+                    let token = jwt.sign({id: user._id}, config.secret, {expiresIn: 43200});
+                    res.status(200).send({msg: 'Login Succeded', token: token});
+                }else{
+                    res.status(401).send({msg: 'Passwords did not match'});
+                }
+            });
+        })      
     },
     register: (req,res) => {
         //regisztáció funkció 

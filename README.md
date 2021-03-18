@@ -137,6 +137,14 @@ nem tudjuk mert még nem adtuk meg a **routeokat**
 `    });`
 `});`
 
+### Jelszó ellenőrzés (Helyes jelszót ütött e be)
+- összehasonlítja bycrpt segítségével a beütött jelszót(canditatePassword) és a user regisztrált passwordjét
+`userSchema.methods.comparePassword = function(canditatePassword, callback){`
+ `   bycrpt.compare(canditatePassword, this.password, function(error, isMatch){`
+  `      if(error) return callback(error);`
+       ` callback(null, isMatch);`
+   ` });`
+`}` 
 
 
 

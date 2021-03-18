@@ -50,6 +50,12 @@ userSchema.pre('save', function(next){
     });
 });
 
-
+// Helyes jelszó (összehasonlítás)
+userSchema.methods.comparePassword = function(canditatePassword, callback){
+    bycrpt.compare(canditatePassword, this.password, function(error, isMatch){
+        if(error) return callback(error);
+        callback(null, isMatch);
+    });
+}
 //importálásra alakítás
 module.exports = userModel;

@@ -10,5 +10,5 @@ const config = require('./config');
 //app beindítása
 app.listen(
         config.port,
-        console.log('A Szerver elindult a Port: %s',config.port)
+        console.log('A Szerver elindult a https://localhost:%s',config.port)
         );

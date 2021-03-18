@@ -36,7 +36,7 @@ userSchema.pre('save', function(next){
     //ha új user jön létre vagy új jelszó a BYCRPT be Hashali
     if(!user.isModified('password'))
     return next();
-    bycrpt.getSalt(10, function(error, salt){
+    bycrpt.genSalt(10, function(error, salt){
         if(error) return next(error);
         
         bycrpt.hash(user.password, salt, function(error,hash){

@@ -65,7 +65,7 @@ nem tudjuk mert még nem adtuk meg a **routeokat**
  `app.use(express.urlencoded({extended: true}));` \
  `app.use(express.json());` \ 
  `app.use(cors);`
- ## Routeok létrehozása
+ # Routeok létrehozása
  - **User**
  server.js-ben
  ` const userRouter = require('./routes/user');` \
@@ -86,7 +86,7 @@ nem tudjuk mert még nem adtuk meg a **routeokat**
  ### Controller.js
  - behívjuk a model/user sémát hogy használhassuk
  ` const model = require('./model'); `
- - ### Routok megfogalmazása kontrollerben ###
+ - ### Routok megfogalmazása kontrollerben 
  - `modules.export = { ` 
     ` login: (req, res) => { `
       `  res.status(200).send({msg: 'Login Succeded'});` 

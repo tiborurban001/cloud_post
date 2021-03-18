@@ -52,8 +52,9 @@ nem tudjuk mert még nem adtuk meg a **routeokat**
 - **index.js** elérés: \
 `const config = require('./index.js');`
 - csatlakoztatjuk az adatbázist: \
-`const db = mongoose.connect(config.mongo_uri, { useNewUrlParser: true}).then(() => console.log('Adatbázishoz csatlakozva'));;`
-
+`const db = mongoose.connect(config.mongo_uri, { useNewUrlParser: true}).then(() => console.log('Adatbázishoz csatlakozva'));`
+- exportáljuk az adatbázist: \
+` module.exports = db; `
 
 
 

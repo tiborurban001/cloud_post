@@ -38,9 +38,13 @@ valamint jelszót adtunk meg neki
 - beleílleszük a ` "dev": "nodemon server.js"` -t
 - ezzel azt érjük el hogy a node surfer-t a nodemon mindig újra indítja változtatásoknál így élőben tudjuk tesztelni.
 
-- **TESZT**
 - kiadjuk a `npm run dev` parancsot a konzolba(cmd)
 - Az eredmény: ![alt text](./ReadMePics/npmrundevtest.png)
+A gond csak az hogyha el szeretnénk a böngészőben érni ezt a címet
+nem tudjuk mert még nem adtuk meg a **routeokat**  
+( Cannot GET \ )
+
+
 
 
 

@@ -23,6 +23,10 @@
 - **Ugyanez a Signup-component-tel** 
 ### Meta data hozzáadása a routhes-ban
 - ` meta: { `
-- `      requiresAuth: false `
+- `      requiresAuth: true `
 - `    }` 
-- Authorizáció kell a belépőnek hogy a Home page-re lépjen
+- Authorizáció kell a belépőnek hogy a Home page-re lépjen(minden máshol false)
+## A Router működésének átalakítása
+- ` let router = new Router `
+- `  `
+

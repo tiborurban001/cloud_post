@@ -10,4 +10,5 @@
 - ? Where do you prefer placing config for Babel, ESLint, etc.? In dedicated config files
 - ? Save this as a preset for future projects? (y/N)   
 ### node.sass letöltése (a saját kódnyelvünket átfordítja CSS-re)
-` npm i node-sass `               
+` npm i node-sass `   
+` npm run serve ` a dev mode server elindítás            

@@ -11,4 +11,6 @@
 - ? Save this as a preset for future projects? (y/N)   
 ### node.sass letöltése (a saját kódnyelvünket átfordítja CSS-re)
 ` npm i node-sass `   
-` npm run serve ` a dev mode server elindítás            
+` npm run serve ` a dev mode server elindítás
+### A fölösleges scriptek,stylesheetek,views-ek törlése
+            

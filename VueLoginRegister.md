@@ -13,4 +13,11 @@
 ` npm i node-sass `   
 ` npm run serve ` a dev mode server elindítás
 ### A fölösleges scriptek,stylesheetek,views-ek törlése
-            
+### majd a Login component route létrehozása és komponens csatolás
+- ` import Login from '../views/Login.vue' `   
+- ` { `
+- `   path: '/login', `
+- `    name: 'login', `
+- `    component: Login `
+- `  },`        
+- **Ugyanez a Signup-component-tel** 

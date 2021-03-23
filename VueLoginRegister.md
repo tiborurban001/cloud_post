@@ -21,3 +21,8 @@
 - `    component: Login `
 - `  },`        
 - **Ugyanez a Signup-component-tel** 
+### Meta data hozzáadása a routhes-ban
+- ` meta: { `
+- `      requiresAuth: false `
+- `    }` 
+- Authorizáció kell a belépőnek hogy a Home page-re lépjen

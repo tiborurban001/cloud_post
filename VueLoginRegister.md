@@ -27,6 +27,22 @@
 - `    }` 
 - Authorizáció kell a belépőnek hogy a Home page-re lépjen(minden máshol false)
 ## A Router működésének átalakítása
-- ` let router = new Router `
-- `  `
+- ` let router átalakítás`
+- aztán auth alapján (van e jwt token vagy nincs loginnál) redirecting 
+- `  router.beforeEach((to, from, next) => { `
+- `   if  (to.matched.some(record => record.meta.requiresAuth)) { `
+- `     if(localStorage.getItem('jwt') == null){ `
+- `       next({ `
+- `         path: '/login', `
+- `         params: {nextUrl: to.fullPath} `
+- `       }) `
+- `     }else{ `
+- `       console.log('Logged in') `
+- `       next(); `
+- `   } `
+- ` }else{ `
+- `   console.log("Doesn't require authorization") `
+- `   next(); `
+- ` } `
+- ` }) `
 

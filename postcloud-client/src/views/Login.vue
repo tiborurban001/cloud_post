@@ -1,11 +1,20 @@
 <template>
-    <div>
-        <h3>PostCloud</h3>
-        <div class="form-group">
-            <input type="text" v-model="email">
-            <input type="password" v-model="password">
+    <div class="login-pg">
+        <header>
+        <h3><span>Post</span>Cloud</h3>
+        </header>
+        <main class="form-group">
+            <input type="text" v-model="email" placeholder="Email">
+            <input type="password" v-model="password" placeholder="Password">
             <button class="login-btn">Log in</button>
-        </div>
+        </main>
+        <footer>
+            <p>
+                Don't have an Account?? <router-link class="signup-link" to="/register">Sign Up!</router-link>.
+            </p>
+            
+            
+        </footer>
     </div>
 </template>
 
@@ -22,5 +31,89 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+//header
+header {
+    h3{
+        color: rgb(33, 37, 41);
+        font-size: 30px;
+        font-weight: 900;
+        text-align: center;
+    }
+    span{
+
+        font-weight: 400;
+    }
+}
+
+//Main
+.login-pg{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100vh;
+
+    .form-group{
+        flex: 1;
+        display:flex;
+        justify-content: flex-start;
+        flex-flow: column;
+        padding: 28px;
+
+       input{
+           outline: none;
+            width: 100%;
+            height: 30px;
+            border: 1px solid rgb(33, 37, 41);
+            margin-bottom: 15px;
+
+           text-indent: 5px;
+            background-color:rgb(222, 226, 230) ;
+
+            &:focus{
+                border: 1.2px solid rgb(0, 129, 167);
+            }
+        }
+       button{
+           outline: none;
+           align-self: center;
+           width: 50%;
+           height: 35px;
+           background: rgb(0,119,182);
+           background: linear-gradient(0deg, rgba(0,119,182,1) 0%, rgba(0,180,216,1) 100%);
+           color: rgb(248, 249, 250);
+           appearance: none;
+           border:none;
+           border-radius: 25px;
+           font-weight: 700;
+           font-size: 19px;
+       }
+    }
+    //Footer
+    footer
+        {
+            border-top:1px solid rgb(33, 37, 41);
+            padding:15px 25px;
+           width: calc(100% - 50px);
+           height: 45px;
+        
+        p{
+            line-height: 10px;
+            color: #8888;
+            text-align: center;
+            
+        }
+        .signup-link{
+            color: rgb(34,35,25);
+            font-weight: 600;
+            font-size: 19px;
+            text-decoration: none;
+            
+        }
+        
+
+       }
+}
+
+
 
 </style>

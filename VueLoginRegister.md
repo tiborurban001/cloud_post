@@ -1,4 +1,4 @@
-# Vue Bevezetése
+# Vue Bevezetése (2.0.0)
 ` vue create postcloud-client ` 
 ### *Vue config menete*
 - Please pick a preset: Manually select features

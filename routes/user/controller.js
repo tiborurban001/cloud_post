@@ -16,10 +16,11 @@ module.exports = {
                 if(isMatch) {
                     //Belépési tokent ad a Usernek ami 12 órán túl lejár
                     let token = jwt.sign({id: user._id}, config.secret, {expiresIn: 43200});
-                    res.status(200).send({msg: 'Login Succeded', token: token});
-                }else{
-                    res.status(401).send({msg: 'Passwords did not match'});
+                    res.status(200).send({auth: true, token: token});
+                    return;
                 }
+                    res.status(401).send({auth: false, msg: 'Passwords did not match'});
+                
             });
         })      
     },
@@ -38,10 +39,13 @@ module.exports = {
         newUser.save()
         .then(result => {
             console.log(result);
-            res.status(200).send({msg: 'Register Successful', user_id: result._id});
+           
+            let token = jwt.sign({id: result._id}, config.secret, {expiresIn: 43200});
+            res.status(200).send({auth: true, token: token});
         })
         .catch(error => {
             console.error(error);
+            res.status(401).send({auth: false, msg: 'Passwords did not match'});
             res.status(500).send({msg: 'Register Failed'});
         })
 

@@ -5,9 +5,12 @@
         <h4>Sign in</h4>
         </header>
         <main class="form-group">
-            <input type="text" v-model="email" placeholder="Email">
-            <input type="password" v-model="password" placeholder="Password">
+            <input type="text" v-model="email" placeholder="Email" :class="(emailError) ? 'err' : ''">
+            <input type="password" v-model="password" placeholder="Password" :class="(passwordError) ? 'err' : ''">
             <button class="login-btn" @click="login">Log in</button>
+            <div class="error_msg" v-if="hasErrors">
+                {{error}}
+            </div>
         </main>
         <footer>
             <p>
@@ -25,7 +28,11 @@ export default {
     data () {
         return {
             email: '',
-            password: ''
+            password: '',
+            hasErrors: false,
+            emailError: false,
+            passwordError: false,
+            error: ""
         }
     },
     methods: {
@@ -44,7 +51,19 @@ export default {
             localStorage.setItem('jwt', response.data.token)
             this.$router.push('/')
             } else{
-                console.log("Error:", response.data.msg)
+                if(response.data.mailError){
+                    this.emailError = true;
+                }else{
+                    this.emailError = false;
+                }
+                if(response.data.passError){
+                    this.passwordError = true;
+                }else{
+                   this.passwordError = false;
+                }
+                this.hasErrors = true
+                this.error = response.data.msg
+                
             }
         }).catch(err => {
             console.log(err)

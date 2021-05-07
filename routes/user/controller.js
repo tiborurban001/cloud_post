@@ -15,7 +15,7 @@ module.exports = {
             //console.log(user);
             //return;
             if(!user){
-                res.send({auth: false, msg: 'Email address not found'});
+                res.send({auth: false, mailError: true, msg: 'Email address not found'});
                 return;
             }
 
@@ -28,7 +28,7 @@ module.exports = {
                     res.status(200).send({auth: true, token});
                     return;
                 }else{
-                    res.send({auth: false, msg: 'Passwords did not match'});
+                    res.send({auth: false, passError: true, msg: 'Password is incorrect'});
 
                 }
                 

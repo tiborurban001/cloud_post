@@ -43,6 +43,8 @@ export default {
             if(response.data.auth){
             localStorage.setItem('jwt', response.data.token)
             this.$router.push('/')
+            } else{
+                console.log("Error:", response.data.msg)
             }
         }).catch(err => {
             console.log(err)
@@ -50,7 +52,7 @@ export default {
 
 
             }
-    }
+        }
 }
 </script>
 

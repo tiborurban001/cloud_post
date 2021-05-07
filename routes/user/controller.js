@@ -8,7 +8,16 @@ module.exports = {
     login: (req, res) => {
         //keresse meg azt a User-t aminekmegfelelnek a beviteli adatok
         model.findOne({ email: req.body.email}, (error, user) =>{
-            if(error) throw error;
+            if(error){
+                res.status(500).send({auth: false, msg: error});
+                return;
+            }
+            //console.log(user);
+            //return;
+            if(!user){
+                res.send({auth: false, msg: 'Email address not found'});
+                return;
+            }
 
             //egyezik e a jelszó egy meglévő felhasználóval?
             user.comparePassword(req.body.password,(error,isMatch) =>{
@@ -16,10 +25,12 @@ module.exports = {
                 if(isMatch) {
                     //Belépési tokent ad a Usernek ami 12 órán túl lejár
                     let token = jwt.sign({id: user._id}, config.secret, {expiresIn: 43200});
-                    res.status(200).send({auth: true, token: token});
+                    res.status(200).send({auth: true, token});
                     return;
+                }else{
+                    res.send({auth: false, msg: 'Passwords did not match'});
+
                 }
-                    res.status(401).send({auth: false, msg: 'Passwords did not match'});
                 
             });
         })      
@@ -38,15 +49,16 @@ module.exports = {
         //promise ágon result és catch ha hiba van
         newUser.save()
         .then(result => {
-            console.log(result);
-           
             let token = jwt.sign({id: result._id}, config.secret, {expiresIn: 43200});
             res.status(200).send({auth: true, token: token});
         })
         .catch(error => {
-            console.error(error);
-            res.status(401).send({auth: false, msg: 'Passwords did not match'});
-            res.status(500).send({msg: 'Register Failed'});
+            if(error.code == 11000){
+
+                res.send({auth: false, msg: "Email already exists"});
+                return
+            } 
+            res.send({auth: false, msg:"An Internal Server error has Occured"})
         })
 
         

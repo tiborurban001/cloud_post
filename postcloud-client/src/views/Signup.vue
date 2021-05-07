@@ -7,9 +7,12 @@
         <main class="form-group">
             <input type="text" v-model="firstname" placeholder="First Name">
             <input type="text" v-model="lastname" placeholder="Last Name">
-            <input type="text" v-model="email" placeholder="Email">
+            <input type="text" v-model="email" placeholder="Email" :class="(hasErrors) ? 'err' : ''">
             <input type="password" v-model="password" placeholder="Password">
             <button class="login-btn" @click="register">Register</button>
+            <div class="error_msg" v-if="hasErrors">
+                {{error}}
+            </div>
         </main>
         <footer>
             <p>
@@ -29,7 +32,9 @@ export default {
             firstname: "",
             lastname: "",
             email: "",
-            password: ""
+            password: "",
+            hasErrors: false,
+            error: ""
         }
     },
     methods: {
@@ -46,9 +51,16 @@ export default {
             email: this.email,
             password: this.password
         }).then(response => {
-            console.log(response)
+            if(response.data.auth){
+                localStorage.setItem('jwt', response.data.token)
+                this.$router.push('/')
+            }else{
+                this.error = response.data.msg
+                this.hasErrors = true
+            }
         }).catch(err => {
-            console.log(err)
+            this.hasErrors = true
+            this.error = err
         })
         }
     }
@@ -92,6 +104,12 @@ header {
         flex-flow: column;
         padding: 28px;
 
+        .error_msg{
+            padding: 15px;
+            color: darkred;
+        }
+
+
        input{
            outline: none;
             width: 100%;
@@ -101,6 +119,11 @@ header {
 
            text-indent: 5px;
             background-color:rgb(222, 226, 230) ;
+
+            &.err{
+                background: rgba(255, 0, 0, 0.2);
+                border: 1px solid darkred;
+            }
 
             &:focus{
                 border: 1.2px solid rgb(0, 129, 167);
@@ -116,7 +139,7 @@ header {
            color: rgb(248, 249, 250);
            appearance: none;
            border:none;
-           border-radius: 25px;
+           border-radius: 20px;
            font-weight: 700;
            font-size: 19px;
        }

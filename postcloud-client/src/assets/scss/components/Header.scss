@@ -1,9 +1,13 @@
 .header {
+ position: fixed;
+ top: 0px;
  width: 100vw;
  height: 35px;
+ left: 0px;
+ right: 0px;
  background: rgb(0,119,182);
  background: linear-gradient(0deg, rgba(0,119,182,1) 0%, rgba(0,180,216,1) 100%);
-
+ 
  .title{
         
         margin: 0;

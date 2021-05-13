@@ -66,11 +66,12 @@ body{
 @import './modules/loginPG.scss';
 //Register
 @import './modules/signupPG.scss';
-
+@import './modules/feed.scss';
 
 //Components
 //Header
 @import './components/Header.scss';
 //Footer
 @import './components/Footer.scss';
-
+//Post
+@import './components/Post.scss';

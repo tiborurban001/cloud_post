@@ -48,19 +48,21 @@ export default {
             password: this.password
         }).then(response => {
             if(response.data.auth){
-            localStorage.setItem('jwt', response.data.token)
-            this.$router.push('/')
+            this.$store.commit('login',response.data.token)
             } else{
+
                 if(response.data.mailError){
                     this.emailError = true;
                 }else{
                     this.emailError = false;
                 }
+
                 if(response.data.passError){
                     this.passwordError = true;
                 }else{
                    this.passwordError = false;
                 }
+
                 this.hasErrors = true
                 this.error = response.data.msg
                 

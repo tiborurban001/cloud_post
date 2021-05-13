@@ -1,0 +1,21 @@
+.header {
+ width: 100vw;
+ height: 35px;
+ background: rgb(0,119,182);
+ background: linear-gradient(0deg, rgba(0,119,182,1) 0%, rgba(0,180,216,1) 100%);
+
+ .title{
+        
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 40px;
+        text-align: center;
+    }
+    span{
+        color: white;
+        font-weight: 300;
+    }
+}

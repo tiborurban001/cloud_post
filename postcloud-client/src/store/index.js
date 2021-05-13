@@ -15,7 +15,7 @@ export default new Vuex.Store({
       display_name: 'Garrosh Hellscream',
       desc: 'Lol, Dark Portal to Draenor go BRRRR...',
       image: 'https://static.icy-veins.com/images/wow/og-image-siege-of-orgrimmar-garrosh-hellscream.jpg',
-      timestamp:1620864000
+      timestamp:1292056964000
     },
     {
       id: 1,
@@ -23,7 +23,7 @@ export default new Vuex.Store({
       display_name: 'Arthas',
       desc: 'Where is my boney dragon?!',
       image: 'https://i.imgflip.com/45cmpc.jpg',
-      timestamp: 1620904987
+      timestamp: 1592056964000
     },
     {
       id: 2,
@@ -31,7 +31,7 @@ export default new Vuex.Store({
       display_name: 'Khadgar',
       desc: '*insert Hero of Azeroth here*',
       image: 'https://i.redd.it/y3q32mv5mga21.jpg',
-      timestamp: 1620904973
+      timestamp:1620914564000
     }
     ]
 

@@ -31,13 +31,13 @@ export default {
       let d = new Date(timestamp);
       let year = d.getFullYear();
       let month = d.getMonth() + 1;
+      let day = d.getDate();
       if(month < 10){
         month = "0" + month;
       }
       if(day < 10){
         day = "0" + day;
       }
-      let day = d.getDate();
       return day + '/' + month + '/' + year;
     }
   }

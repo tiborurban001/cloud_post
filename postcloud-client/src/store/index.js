@@ -15,7 +15,7 @@ export default new Vuex.Store({
       display_name: 'Garrosh Hellscream',
       desc: 'Lol, Dark Portal to Draenor go BRRRR...',
       image: 'https://static.icy-veins.com/images/wow/og-image-siege-of-orgrimmar-garrosh-hellscream.jpg',
-      timestamp: 1620904791
+      timestamp:1620864000
     },
     {
       id: 1,

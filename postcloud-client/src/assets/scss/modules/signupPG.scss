@@ -1,0 +1,52 @@
+.signup-pg{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100vh;
+
+    header {
+    padding: 20px 25px;
+    h3{
+        color: rgb(33, 37, 41);
+        font-size: 30px;
+        font-weight: 900;
+        text-align: center;
+    }
+    span{
+
+        font-weight: 400;
+    }
+     h4{
+        color: rgb(188, 202, 206);
+        text-align:  center;
+        font-size: 24px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+}
+
+   
+    //Footer
+    footer
+        {
+            border-top:1px solid rgb(33, 37, 41);
+            padding:15px 25px;
+           width: calc(100% - 50px);
+           height: 45px;
+        
+        p{
+            line-height: 10px;
+            color: #8888;
+            text-align: center;
+            
+        }
+        .link{
+            color: rgb(34,35,25);
+            font-weight: 600;
+            font-size: 19px;
+            text-decoration: none;
+            
+        }
+        
+
+       }
+}

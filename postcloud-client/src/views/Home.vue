@@ -1,8 +1,8 @@
 <template>
-  <div class="home">
+  <main class="feed">
     Hello, World!
     <button @click='logout'>Logout</button>
-  </div>
+  </main>
 </template>
 
 <script>

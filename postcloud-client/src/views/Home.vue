@@ -12,7 +12,7 @@
       </footer>
     </article>
     
-    <button @click='logout'>Logout</button>
+    
   </main>
 </template>
 
@@ -24,9 +24,10 @@ export default {
     }
   },
   methods:{
-    logout() {
-      this.$store.commit('logout');
-    },
+    //logout() {
+    //  this.$store.commit('logout');
+   // }
+   // ,
     timestamp2Date (timestamp) {
       let d = new Date(timestamp);
       let year = d.getFullYear();

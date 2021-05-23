@@ -53,12 +53,15 @@ export default {
 
                 if(response.data.mailError){
                     this.emailError = true;
+                    this.passwordError = true;
                 }else{
                     this.emailError = false;
+                    
                 }
 
                 if(response.data.passError){
                     this.passwordError = true;
+                    this.emailError = true;
                 }else{
                    this.passwordError = false;
                 }

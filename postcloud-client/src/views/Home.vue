@@ -12,13 +12,17 @@
         <img :src="post.image" :alt="post.desc" class="post-image">
       </section>
       <footer class="post-desc">
+       <section class="icons">
+         <i class="material-icons actions">favorite</i> 
+         <i class="material-icons actions">chat_bubble</i>
+         <i class="material-icons actions share">share</i>
+       </section>
+       <section class="numbers">
+         <span class="likes">47</span>
+         <span class="comments">12</span>
+       </section>
        <p><strong>{{ post.display_name }}: </strong><span class="italic">{{post.desc}}</span> </p>
       <p class="timestamp">{{ timestamp2Date(post.timestamp) }}</p>
-       <section class="icons">
-         <i class="material-icons actions">favorite</i>
-         <i class="material-icons actions">chat_bubble</i>
-         <i class="material-icons actions">share</i>
-       </section>
       </footer>
     </article>
     

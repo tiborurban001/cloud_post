@@ -1,8 +1,11 @@
 <template>
     <main class="view profile">
-        <section class="profile-head">
+        <section class="profile-head">     
             <strong>{{display_name}}</strong>
-            
+            <i class="material-icons share">share</i>
+            <section class="statistics">
+                <p class="postcount">Posts: {{posts.length}}</p>
+            </section>
         </section>
 
         <section class="posts">
@@ -30,6 +33,7 @@ export default {
                 auth_token: localStorage.getItem('jwt')
             }).then(({ data }) => {
                 this.display_name = data.details.display_name;
+                
                 this.posts = data.details.posts;
             })
         }
@@ -48,6 +52,7 @@ export default {
     flex-direction: column;
     margin-top: 35px;
     
+    
     .profile-head{
         background: rgb(0,119,182);
         background: linear-gradient(0deg, rgba(0,119,182,1) 0%, rgba(0,180,216,1) 100%);
@@ -55,6 +60,18 @@ export default {
         font-size: 20px;
         padding: 15px;
         box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .postcount{
+            font-size: 18px;
+            margin-bottom: 2px;
+            font-weight: 500;
+        }
+        .share{
+            grid-column: 2/2;
+            text-align: right;
+        }
     }
 
     .posts{

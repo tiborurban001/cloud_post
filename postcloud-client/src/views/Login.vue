@@ -42,6 +42,7 @@ export default {
             if(this.email == '' || this.password == ''){
                 return alert('Please fill in your Email and Password')
             }
+            
         
         this.$http.post(api_url + 'user/login', {
             email: this.email,
@@ -53,21 +54,16 @@ export default {
 
                 if(response.data.mailError){
                     this.emailError = true;
-                    this.passwordError = true;
-                }else{
-                    this.emailError = false;
-                    
+                    this.passwordError = true;  
                 }
 
                 if(response.data.passError){
                     this.passwordError = true;
                     this.emailError = true;
-                }else{
-                   this.passwordError = false;
                 }
 
-                this.hasErrors = true
-                this.error = response.data.msg
+                this.hasErrors = true;
+                this.error = response.data.msg;
                 
             }
         }).catch(err => {

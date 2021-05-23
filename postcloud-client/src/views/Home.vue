@@ -1,17 +1,26 @@
 <template>
-  <main class="feed">
+  <main class="view feed">
 
     <article class="post" v-for="post in feed" :key="post.id">
-      <section class="post-user">{{ post.display_name }}</section>
+      <section class="post-user">
+        posted by:  <span class="italic">{{ post.display_name }}</span>
+        
+      </section>
+      
+      
       <section class="post-picture">
         <img :src="post.image" :alt="post.desc" class="post-image">
       </section>
       <footer class="post-desc">
-       <p><strong>{{ post.display_name }}:</strong>{{post.desc}} </p>
+       <p><strong>{{ post.display_name }}: </strong><span class="italic">{{post.desc}}</span> </p>
       <p class="timestamp">{{ timestamp2Date(post.timestamp) }}</p>
+       <section class="icons">
+         <i class="material-icons actions">favorite</i>
+         <i class="material-icons actions">chat_bubble</i>
+         <i class="material-icons actions">share</i>
+       </section>
       </footer>
     </article>
-    
     
   </main>
 </template>
@@ -29,6 +38,7 @@ export default {
    // }
    // ,
     timestamp2Date (timestamp) {
+      timestamp = new Number(timestamp);
       let d = new Date(timestamp);
       let year = d.getFullYear();
       let month = d.getMonth() + 1;

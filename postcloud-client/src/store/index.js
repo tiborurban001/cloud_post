@@ -8,35 +8,19 @@ export default new Vuex.Store({
   state: {
     api_url: 'http://localhost:3000/',
     isAuthenticated: false,
-    feed: [
-    {
-      id: 0,
-      user_id: 0,
-      display_name: 'Garrosh Hellscream',
-      desc: 'Lol, Dark Portal to Draenor go BRRRR...',
-      image: 'https://static.icy-veins.com/images/wow/og-image-siege-of-orgrimmar-garrosh-hellscream.jpg',
-      timestamp:1292056964000
-    },
-    {
-      id: 1,
-      user_id: 1,
-      display_name: 'Arthas',
-      desc: 'Where is my boney dragon?!',
-      image: 'https://i.imgflip.com/45cmpc.jpg',
-      timestamp: 1592056964000
-    },
-    {
-      id: 2,
-      user_id: 2,
-      display_name: 'Khadgar',
-      desc: '*insert Hero of Azeroth here*',
-      image: 'https://i.redd.it/y3q32mv5mga21.jpg',
-      timestamp:1620914564000
-    }
-    ]
+    feed: []
 
   },
   mutations: {
+    getFeed(state,feed)
+    {
+      feed = feed.reverse(function(a, b){
+        return b.timestamp - a.timestamp;
+    })
+      //Sorbarendezés postolás ideje szerint
+      
+      state.feed = feed;
+    },
     isAuthenticated(state){
       if(localStorage.getItem('jwt') != null){
         state.isAuthenticated = true;

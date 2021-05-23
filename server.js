@@ -12,6 +12,7 @@ const db = require('./config/database');
 
 //user route
 const userRouter = require('./routes/user');
+const postRouter = require('./routes/post');
 
 
 
@@ -24,14 +25,17 @@ const cors = (req, res, next) => {
 };
 
 
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
+app.use(express.urlencoded({limit: '50mb',extended: true}));
+app.use(express.json({limit: '50mb'}));
 app.use(cors);
 
 
 //---ROUTES
 //User
 app.use('/user', userRouter);
+
+//Post
+app.use('/post', postRouter);
 
 
 //app beindítása

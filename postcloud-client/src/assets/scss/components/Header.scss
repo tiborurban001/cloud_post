@@ -2,14 +2,17 @@
  position: fixed;
  top: 0px;
  width: 100vw;
- height: 35px;
+ height: 40px;
  left: 0px;
  right: 0px;
  background: rgb(0,119,182);
  background: linear-gradient(0deg, rgba(0,119,182,1) 0%, rgba(0,180,216,1) 100%);
+ display: grid;
+ grid-template-columns: repeat(5,1fr);
  
  .title{
         
+    grid-column: 1/4;
         margin: 0;
         padding: 0;
         color: white;
@@ -26,12 +29,18 @@
 
     .logout{
         
-        float: right;
-        height: 35px;
-        font-size: large;
-        background: none;
-        border: 0.8px solid white;
-        color: white;
+        grid-column: 5;
+        height: 40px;
+        width: 50px;
+        border: none;
+        color: rgb(252, 252, 252);
+       background: none;
         text-align: center;
+        .lg{
+            font-size: 30px;
+            
+            justify-content: center;
+        }
+        
     }
 }

@@ -1,22 +1,70 @@
+
 .post{
-    background-color: white;
-    padding-bottom: 30px;
-    
-    .post-user {
-        height: 30px;
-        display: flex;
-        align-items: center;
+
+
+
+    .post-btns {
+        position: absolute;
+        left: 50%;
+        bottom: 100px;
+        transform: translateX(-50%);
     }
 
-    .post-picture{
-        width: 100%;
-        .post-image{
+    .field-group{
+        padding: 15px;
+        box-sizing: border-box;
+        background-color: ghostwhite;
+
+
+        .desctext{
+            font-size: 18px;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .input-field{
+            border: 1px solid black;
+            display: block;
             width: 100%;
+            margin: 0 auto;
+            height: 40px;
+            outline: none;
+            text-indent: 4px;
+            font-size: 16px;
         }
     }
+    button{
+        appearance: none;
+        border:none;
+        outline: none;
+        background: none;
+        margin: 0;
+        padding: 0;
+        margin-right: 40px;
+        background-color: ghostwhite;
 
-    .post-timestamp{
-        padding-bottom: 20px;
+        &:last-of-type{
+            margin-right: 0;
+        }
     }
+}
+.icon{
+    font-size: 50px;
+    
+}
 
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
+#canvas {
+    width: 100%;
+    height: auto;
+}
+
+#video {
+    width: 100%;
+    height: auto;
 }

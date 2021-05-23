@@ -28,19 +28,22 @@
     //Footer
     footer
         {
-            border-top:1px solid rgb(33, 37, 41);
+            background: rgb(0,119,182);
+            background: linear-gradient(0deg, rgba(0,119,182,1) 0%, rgba(0,180,216,1) 100%);
+        
+            border-top:1px solid white;
             padding:15px 25px;
            width: calc(100% - 50px);
            height: 45px;
         
         p{
             line-height: 10px;
-            color: #8888;
+            color: rgba(238, 238, 238, 0.533);
             text-align: center;
             
         }
         .link{
-            color: rgb(34,35,25);
+            color: rgb(255, 255, 255);
             font-weight: 600;
             font-size: 19px;
             text-decoration: none;

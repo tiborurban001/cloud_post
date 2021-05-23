@@ -7,5 +7,7 @@ const controller = require('./controller');
 router.post('/login', controller.login);
 //register route
 router.post('/register', controller.register);
+//Profil route
+router.post('/getprofile', controller.getProfile);
 
 module.exports = router;
